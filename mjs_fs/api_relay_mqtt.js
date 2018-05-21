@@ -19,3 +19,7 @@ function init() {
           }, null); 
     }
 }
+
+print("Registering relay on MQTT server...");
+init();
+print("Relay registration done.");
