@@ -1,0 +1,20 @@
+author: Tomasz Kopacki <tomasz@kopacki.eu>
+description: AC/DC relay controlled via MQTT
+type: lib
+version: 1.0
+
+filesystem:
+  - mjs_fs
+
+config_schema:
+  - ["relay.chanels.chanel1.topic", "s", "relay/chanel1", {title: "Topic for first chanel"}]
+  - ["relay.chanels.chanel2.topic", "s", "relay/chanel2", {title: "Topic for second chanel"}]
+  - ["relay.chanels.chanel3.topic", "s", "relay/chanel3", {title: "Topic for third chanel"}]
+  - ["relay.chanels.chanel4.topic", "s", "relay/chanel4", {title: "Topic for forth chanel"}]
+
+libs:
+  - origin: https://github.com/tkopacki/mongoose-string-utils
+  - origin: https://github.com/tkopacki/mongoose-relay
+  - origin: https://github.com/mongoose-os-libs/mqtt
+
+manifest_version: 2017-05-18
