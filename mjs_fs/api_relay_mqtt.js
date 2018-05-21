@@ -23,9 +23,9 @@ function register() {
                 if(chanel.topic === topic) {
                     print("Recieved new message(", message, ") for chanel", chanel.name);
                     if(message === "1") {
-                        Chanels.on(chanel);
+                        Chanels.on(idx);
                     } else {
-                        Chanels.off(chanel);
+                        Chanels.off(idx);
                     }
                 }
             }
