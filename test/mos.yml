@@ -18,5 +18,6 @@ libs:
   - origin: https://github.com/tkopacki/mongoose-string-utils
   - origin: https://github.com/tkopacki/mongoose-relay
   - origin: https://github.com/mongoose-os-libs/mqtt
+  - origin: https://github.com/mongoose-os-libs/wifi
 
 manifest_version: 2017-05-18
