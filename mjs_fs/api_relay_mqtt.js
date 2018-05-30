@@ -41,11 +41,11 @@ function sendCallback(topic, message, channelName) {
     let callbackEnabled = Cfg.get('relay.config.callback.enabled');
     if (callbackEnabled) {
         let callbackTopic = Cfg.get('relay.config.callback.topic');
-        MQTT.pub(callbackTopic, {
+        MQTT.pub(callbackTopic, JSON.stringify({
             "topic": topic,
             "message": (message === "1" ? "ON" : "OFF"),
             "channel": channelName
-        });
+        }), 1);
         print("Callback message sent");
     }
 }
