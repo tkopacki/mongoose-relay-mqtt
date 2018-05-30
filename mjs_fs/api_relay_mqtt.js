@@ -7,7 +7,7 @@ function init() {
         print('Relay configuration is missing !');
     } else {
         let enabledchannelsArray = StringUtils.split(enabledchannels, ',');
-        print('Enabled channels:', enabledChannelsArray.length);
+        print('Enabled channels:', enabledchannelsArray.length);
         for(let idx = 0 ; idx < enabledchannelsArray.length ; idx++) {
             print("Initialiazing channel", idx, "for mqtt transport");
             channels.get(enabledchannelsArray[idx]).topic = Cfg.get('relay.channels.' + enabledchannelsArray[idx] + '.topic');
