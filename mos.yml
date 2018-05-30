@@ -7,10 +7,10 @@ filesystem:
   - mjs_fs
 
 config_schema:
-  - ["relay.chanels.chanel1.topic", "s", "relay/chanel1", {title: "Topic for first chanel"}]
-  - ["relay.chanels.chanel2.topic", "s", "relay/chanel2", {title: "Topic for second chanel"}]
-  - ["relay.chanels.chanel3.topic", "s", "relay/chanel3", {title: "Topic for third chanel"}]
-  - ["relay.chanels.chanel4.topic", "s", "relay/chanel4", {title: "Topic for forth chanel"}]
+  - ["relay.channels.channel1.topic", "s", "relay/channel1", {title: "Topic for first channel"}]
+  - ["relay.channels.channel2.topic", "s", "relay/channel2", {title: "Topic for second channel"}]
+  - ["relay.channels.channel3.topic", "s", "relay/channel3", {title: "Topic for third channel"}]
+  - ["relay.channels.channel4.topic", "s", "relay/channel4", {title: "Topic for forth channel"}]
 
 libs:
   - origin: https://github.com/tkopacki/mongoose-relay
