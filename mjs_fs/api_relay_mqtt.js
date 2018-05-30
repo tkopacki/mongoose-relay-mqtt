@@ -16,26 +16,24 @@ function init() {
     }
 }
 
-function subscribe(connection, topic, message) {
-    for (let idx in Channels.channels) {
-        let channel = Channels.channels[idx];
-        if (channel.topic === topic) {
-            print("Recieved new message(", message, ") for channel", channel.name);
-            sendCallback(topic, message, channel.name);
-            if (message === "1") {
-                Channels.on(idx);
-            } else {
-                Channels.off(idx);
-            }
-        }
-    }
-}
-
 function registerMQTT() {
     for (let idx in Channels.channels) {
         let channel = Channels.channels[idx];
         print("Registering channel", idx, "on topic", channel.topic);
-        MQTT.sub(channel.topic, subscribe, null);
+        MQTT.sub(channel.topic, function (connection, topic, message) {
+            for (let idx in Channels.channels) {
+                let channel = Channels.channels[idx];
+                if (channel.topic === topic) {
+                    print("Recieved new message(", message, ") for channel", channel.name);
+                    sendCallback(topic, message, channel.name);
+                    if (message === "1") {
+                        Channels.on(idx);
+                    } else {
+                        Channels.off(idx);
+                    }
+                }
+            }
+        }, null);
     }
 }
 
