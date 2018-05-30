@@ -11,6 +11,10 @@ config_schema:
   - ["relay.channels.channel2.topic", "s", "relay/channel2", {title: "Topic for second channel"}]
   - ["relay.channels.channel3.topic", "s", "relay/channel3", {title: "Topic for third channel"}]
   - ["relay.channels.channel4.topic", "s", "relay/channel4", {title: "Topic for forth channel"}]
+  - ["relay.config.callback", "o", {title: "Callback configuration"}]
+  - ["relay.config.callback.enabled", "b", false, {title: "Callback switch"}]
+  - ["relay.config.callback.topic", "s", "relay/callback", {title: "Topic for callback message"}]
+
 
 libs:
   - origin: https://github.com/tkopacki/mongoose-relay
