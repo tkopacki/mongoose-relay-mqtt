@@ -45,7 +45,7 @@ function sendCallback(topic, message, channelName) {
             "topic": topic,
             "message": (message === "1" ? "ON" : "OFF"),
             "channel": channelName
-        }), 1);
+        }), 1, true);
         print("Callback message sent");
     }
 }
