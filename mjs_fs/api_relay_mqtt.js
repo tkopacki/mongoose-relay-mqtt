@@ -50,7 +50,18 @@ function sendCallback(topic, message, channelName) {
     }
 }
 
+function scheduler() {
+    let callbackEnabled = Cfg.get('relay.config.callback.enabled');
+    if (callbackEnabled) {
+        setTimeout(() => {
+            let statusTopic = Cfg.get('relay.config.callback.status');
+            MQTT.pub(statusTopic, JSON.stringify(Channels.channels));
+        }, 1000 * 5);
+    }
+}
+
 print("Registering relay on MQTT server...");
 init();
 registerMQTT();
+setScheduler();
 print("Relay registration done.");

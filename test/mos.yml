@@ -16,6 +16,7 @@ config_schema:
   - ["relay.config.callback", "o", {title: "Callback configuration"}]
   - ["relay.config.callback.enabled", "b", false, {title: "Callback switch"}]
   - ["relay.config.callback.topic", "s", "relay/callback", {title: "Topic for callback message"}]
+  - ["relay.config.callback.status", "s", "relay/status", {title: "Topic for status message"}]
 
 libs:
   - origin: https://github.com/tkopacki/mongoose-string-utils
