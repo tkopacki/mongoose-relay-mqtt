@@ -56,7 +56,9 @@ function setScheduler() {
     if (callbackEnabled) {
         Timer.set(1000 * 5, Timer.REPEAT, function() {
             let statusTopic = Cfg.get('relay.config.callback.status');
-            MQTT.pub(statusTopic, JSON.stringify(Channels.channels));
+            for (let idx in Channels.channels) {
+                MQTT.pub(statusTopic, JSON.stringify(Channels.channels[idx]));
+            }
         }, null);
     }
 }
