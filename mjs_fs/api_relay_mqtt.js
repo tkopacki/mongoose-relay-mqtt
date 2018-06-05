@@ -1,5 +1,6 @@
 load('api_relay.js');
 load('api_mqtt.js');
+load('api_timer.js');
 
 function init() {
     let enabledchannels = Cfg.get('relay.channels.enabled');
@@ -53,10 +54,10 @@ function sendCallback(topic, message, channelName) {
 function setScheduler() {
     let callbackEnabled = Cfg.get('relay.config.callback.enabled');
     if (callbackEnabled) {
-        setInterval(function() {
+        Timer.set(1000 * 5, Timer.REPEAT, function() {
             let statusTopic = Cfg.get('relay.config.callback.status');
             MQTT.pub(statusTopic, JSON.stringify(Channels.channels));
-        }, 1000 * 5);
+        }, null);
     }
 }
 
