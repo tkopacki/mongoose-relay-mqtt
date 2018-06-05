@@ -50,7 +50,7 @@ function sendCallback(topic, message, channelName) {
     }
 }
 
-function scheduler() {
+function setScheduler() {
     let callbackEnabled = Cfg.get('relay.config.callback.enabled');
     if (callbackEnabled) {
         setTimeout(function() {
