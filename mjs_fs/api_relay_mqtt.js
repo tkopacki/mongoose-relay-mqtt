@@ -55,7 +55,7 @@ function setScheduler() {
     let callbackEnabled = Cfg.get('relay.config.callback.enabled');
     if (callbackEnabled) {
         Timer.set(1000 * 5, Timer.REPEAT, function() {
-            channels = {};
+            let channels = {};
             let statusTopic = Cfg.get('relay.config.callback.status');
             for (let idx in Channels.channels) {
                 let channel = Channels.channels[idx];
