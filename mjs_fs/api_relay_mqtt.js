@@ -62,6 +62,7 @@ function setScheduler() {
                 channel.status = Channels.getState(channel.name);
                 channels[channel.name] = channel;
             }
+            print("Sending status:", JSON.stringify(channels));
             MQTT.pub(statusTopic, JSON.stringify(channels));
         }, null);
     }
